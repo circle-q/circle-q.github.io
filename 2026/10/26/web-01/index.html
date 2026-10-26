@@ -27,7 +27,7 @@
 <meta property="og:description" content="基于上周学习的前端基础知识,用大白话整理复盘加深理解.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-10-26T04:23:18.000Z">
-<meta property="article:modified_time" content="2026-10-26T08:30:56.486Z">
+<meta property="article:modified_time" content="2026-10-26T08:41:24.023Z">
 <meta property="article:author" content="Q.q">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary_large_image">
@@ -398,7 +398,7 @@
 <p><strong>第三部分：快递单上的附加说明（请求头 Headers）</strong></p>
 <ol>
 <li><strong>host</strong>：我该把包裹送到哪。即收件人的家庭住址。指明了请求将要发送到的服务器主机名和端口号。在 HTTP&#x2F;1.1 中，所有请求必须包含 Host 头，否则会报 400 错误。有时候服务器配置不当，黑客通过修改 Host 头指向本地，就能实现“虚拟主机”越权访问。</li>
-<li><strong>Referer</strong>：你是怎么进来的？你的“介绍信”。告诉服务器你是从哪个门（网页）点过来的。包含了当前请求页面的来源页面的地址。有些后台限制“只能从内部管理页面点击进入”，用 Burp 抓包，伪造一个 Referer: \<a target="_blank" rel="noopener" href="http://admin.com,就能骗过服务器拿到管理员权限./">http://admin.com，就能骗过服务器拿到管理员权限。</a></li>
+<li><strong>Referer</strong>：你是怎么进来的？你的“介绍信”。告诉服务器你是从哪个门（网页）点过来的。包含了当前请求页面的来源页面的地址。有些后台限制“只能从内部管理页面点击进入”，用 Burp 抓包，伪造一个 Referer: <code>http://admin.com</code>，就能骗过服务器拿到管理员权限。</li>
 <li><strong>Origin</strong>：你从哪里来？（跨域版）<br>· 大白话：和 Referer 类似，也是个查户口的，但它只查户籍地，不查具体门牌号。</li>
 <li><strong>Cookie</strong>：你的身份门禁卡。一张记录了你登录状态的卡。服务器靠它认出你是“老客户”。<br>eg:把 Cookie: admin&#x3D;0 改成 admin&#x3D;1，越权访问。<br>但这张卡如果被黑客偷了，号就没了。所以服务器给 Cookie 加了三个封印：<br><strong>Domain</strong>（划地盘）：规定这张卡只能在哪个网站用。<br><strong>HttpOnly</strong>（防盗保险柜）：我不想让别人用我的卡。加了它,JavaScript 脚本就偷不到Cookie。<br><strong>SameSite</strong>（防跨站伪造）：防止黑客用钓鱼网页，骗你的浏览器自动带上 Cookie 去给陌生人转账。 eg:你刚登录了银行网站（拿到了 Cookie），然后你手贱点开了一个黑客发你的搞笑网站。黑客的网站后台偷偷写了一行代码：“向银行发送转账 10000 元请求”。如果没加 SameSite，浏览器会傻乎乎带着银行的 Cookie 去发这个请求，钱就没了。如果服务器设置了 SameSite&#x3D;Lax 或 Strict，浏览器在跨站发送请求时，就绝对不会带上这个 Cookie。银行一看你没带门禁卡，直接拒绝转账。</li>
 <li><strong>X-Forwarded-For (XFF)</strong>：你的真实家庭住址。用来记录你真实的 IP 地址。因为经过了代理服务器（代购)，服务器只能看到代理的 IP，XFF 就是用来记录最初是谁买的。</li>
