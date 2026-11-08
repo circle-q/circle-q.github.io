@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>从0开始学web-03:SQL注入</title>
+    <link href="/2026/11/08/web03/"/>
+    <url>/2026/11/08/web03/</url>
+    
+    <content type="html"><![CDATA[<p>哇这次的例会内容真的好全面详细易于理解且给了各种实例实战经验，这周也忙爆了，唉，笔记就先搁置了，不懂的地方再回去看例会内容。整理搜寻了众多问题，感觉这根本不是几天可以掌握的，只能做到差不多理解，sqli lab只做了几道题，远远不够，我哭了。先记录下来，然后等这段时间把这些问题都回答一下，加油！</p><h3 id="♾️个问题"><a href="#♾️个问题" class="headerlink" title="♾️个问题"></a>♾️个问题</h3><h1 id="概念原理"><a href="#概念原理" class="headerlink" title="概念原理"></a>概念原理</h1><ol><li>SQL注入原理与成因：什么是SQL注入？为什么会发生（成因）？为什么会产生歧义（数据与代码混淆）？</li><li>字符串拼接的危险性：为什么字符串拼接危险？预编译和拼接的本质区别是什么？</li><li>什么是引号闭合？为什么要闭合（如单引号、双引号、括号）？</li><li>注释后续SQL的目的是什么？不同数据库（MySQL, Oracle, SQL Server）的注释符</li><li>SQL注入有哪些类型&#x2F;分类？包括注入类型（联合、报错、布尔、时间、二次、宽字节、Cookie&#x2F;XFF等）和注入点类型。</li><li>SQL注入能造成什么危害（除了拿数据还能做什么）？</li><li>数据库最小权限为什么重要？</li><li>判断数据库类型：如何判断是什么数据库（MySQL、SQL Server、Oracle、SQLite、PGSQL）？不同数据库的特性、版本区别（如MySQL4和5区别）、特殊利用（如SQLite的RCE）？</li><li>哪些地方容易触发SQL注入（查询、搜索、后台等）？</li></ol><h1 id="注入手法"><a href="#注入手法" class="headerlink" title="注入手法"></a>注入手法</h1><ol><li>联合注入与回显：<br>· UNION为什么需要匹配列数？用ORDER BY怎么猜列数？<br>· 什么叫回显位？怎么判断回显位？</li><li>报错注入：<br>· 报错注入原理？为什么会报错？常见函数有哪些（updatexml、extractvalue、floor）？现打常见的报错注入语句。</li><li>盲注体系：<br>· 布尔盲注：为什么能逐字符得到信息？根据什么条件判断回显（除了页面内容还有其他判断方式吗）？<br>· 时间盲注：与布尔盲注有什么共同点？什么时候用布尔，什么时候用时间？如何通过时间盲注注出数据？盲注脚本怎么写过？<br>· 二分法时间盲注的思路？</li><li>读写文件与拿Shell：<br>· 怎么读文件？（load_file的使用场景）<br>· MySQL植入Webshell怎么打？用什么函数？<br>· into outfile写文件需要哪些权限要求&#x2F;前提条件？<br>· 除了into outfile还有什么写文件方法？（into dumpfile、日志写入的利用前提）</li><li>特殊注入：<br>· 宽字节注入的原理是什么？（GBK编码导致的反斜杠被吃掉）<br>· 二次注入的原理与利用场景？</li><li>工具SQLmap：<br>· SQLmap常用参数？（-v, tamper, –search）<br>· 伪静态注入用SQLmap怎么跑？<br>· Sqlmap的–os-shell原理？（结合into outfile）<br>· Sqlmap在什么条件下无法利用（CTF不能用Sqlmap的原因）？</li><li>DNSlog外带与XSS追踪：<br>· 如何利用DNSlog外带数据（需要什么函数、什么系统、什么权限）？<br>· XSS追踪能不能利用DNSlog？</li></ol><h1 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h1><ol><li>预编译防御全解：<br>· PreparedStatement为什么可以防止大部分SQL注入？（从代码层面解释原理和具体执行过程）。<br>· 预编译什么时候会失效？预编译不适用的场景有哪些？<br>· 动态处理难点：什么是动态表名？order by后面为什么不能预编译？like后面如何预编译？<br>· 解决方法：什么是白名单映射？如何利用映射表安全处理动态表名和排序字段？如果能在order by后面查询怎么利用？</li><li>SQL注入的编码与过滤绕过（WAF Bypass）：<br>· 空格被ban了怎么绕过（%20, &#x2F;**&#x2F;, ()）？<br>· 假如ban掉了单引号&#x2F;select&#x2F;database&#x2F;information_schema怎么绕过？<br>· 针对注释符号、大小写、换行绕过的正则怎么写？针对你写的正则怎么绕过？如何补充？<br>· SQL注入编码转义，如何攻击？<br>· SQL注入如何做模糊测试（Fuzz）？有什么缺点（被Ban IP、无回显）？如何解决？</li><li>防御补充：如何防御SQL注入漏洞？面对MyBatis场景的防御方式？</li></ol><h1 id="一些看不懂的东西"><a href="#一些看不懂的东西" class="headerlink" title="一些看不懂的东西"></a>一些看不懂的东西</h1><ol><li>MySQL UDF提权条件和原理是什么？</li><li>SQL Server的命令执行函数？（xp_cmdshell）</li><li>怎么打MySQL？有密码的MySQL可以打吗？MySQL怎么权限提升？还有别的提权吗？</li><li>延时注入当sleep、benchmark都被过滤了，应该怎么解决？<br>具体可以用哪些高计算函数&#x2F;正则表达式来构造长字符串进行延时？</li><li>系统有SQL注入，怎么做危害最大化处理？OS-shell的前提有哪些？除了os-shell还有什么方法能拿下MySQL所在的服务器？前提是什么？</li><li>拿下SQL服务器发现只有一个MySQL（站库分离），如何利用它拿下CMS服务器？如果该MySQL服务器不出网怎么办？（内网扫描、写文件、协议出网探测）</li><li>CodeQL构建的数据库和MySQL有什么区别？CodeQL实战经验（如挖Log4j2）？</li><li>逻辑漏洞（登录框怎么挖：弱口令-&gt;SQL注入-&gt;JS接口越权）、条件竞争。</li><li>SQL注入主从复制</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>笔记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>从0开始学web-02:异步编程</title>
     <link href="/2026/10/31/web02/"/>
     <url>/2026/10/31/web02/</url>
