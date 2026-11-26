@@ -19,22 +19,22 @@
   <meta name="author" content="Q.q">
   <meta name="keywords" content="">
   
-    <meta name="description" content="周周记小概念">
+    <meta name="description" content="热爱可抵岁月漫长">
 <meta property="og:type" content="article">
-<meta property="og:title" content="周记">
-<meta property="og:url" content="https://circle-q.github.io/2026/11/22/bbb/index.html">
+<meta property="og:title" content="初见">
+<meta property="og:url" content="https://circle-q.github.io/2026/10/24/sui1/index.html">
 <meta property="og:site_name" content="Circle">
-<meta property="og:description" content="周周记小概念">
+<meta property="og:description" content="热爱可抵岁月漫长">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-11-22T09:29:56.000Z">
-<meta property="article:modified_time" content="2026-11-22T14:12:19.227Z">
+<meta property="article:published_time" content="2026-10-23T16:26:04.000Z">
+<meta property="article:modified_time" content="2026-10-26T04:16:12.012Z">
 <meta property="article:author" content="Q.q">
-<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>周记 - Circle</title>
+  <title>初见 - Circle</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -329,7 +329,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="周记"></span>
+            <span id="subtitle" data-typed-text="初见"></span>
           
         </div>
 
@@ -340,8 +340,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-11-22 17:29" pubdate>
-          2026年11月22日 下午
+        <time datetime="2026-10-24 00:26" pubdate>
+          2026年10月24日 凌晨
         </time>
       </span>
     
@@ -352,7 +352,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          115 字
         
       </span>
     
@@ -363,7 +363,7 @@
         
         
         
-          14 分钟
+          1 分钟
         
       </span>
     
@@ -402,27 +402,19 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">周记</h1>
+            <h1 id="seo-header">初见</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="browser"><a href="#browser" class="headerlink" title="browser"></a>browser</h1><p>意思是浏览器<br>极客2019http中提示please use “Syclover”browser，http中带有浏览器的是user agent 头，修改ua头就可以了。</p>
-<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><p>是项目开发中常见的分布式版本控制系统，总之呢就是一个存档读档的好工具。你把你的代码笔记提交上去，它就会记录你写了哪些内容，删了哪些内容。<br>使用方法<br>新建文件夹，自己命名一下，然后右键git bash here (感觉和写博客一样)<br>首先git init，来建立git仓库。<br>然后把写的东西放到文件夹里<br>敲 git add  .    <strong>别忘记这个.了！这个是把写的东西放进去让它知道的</strong><br>敲 git commit -m “取一个标题” ，它就存档了<br>git log查看我的存档，如果我删了那这个文件就没有了，不会显示在这里面<br>git refolg真正的查看历史记录，你的存档读档包括删除都可以看到<br>git restore 文件名  （不是我取的标题）<br>这是在我还没有建立新存档时，我想直接回到上一个存档点用的<br>git reset –hard 一堆乱码（这个是在git log 里面记录的，commit后面那一串）选取想回到的那个存档所在的乱码就行</p>
-<h1 id="RCE"><a href="#RCE" class="headerlink" title="RCE"></a>RCE</h1><p>远程代码执行 (Remote Code Execution)：攻击者的输入被当作代码（如PHP、Python脚本）的一部分来执行。<br>远程命令执行 (Remote Command Execution)：攻击者能够通过应用程序，在服务器上执行操作系统命令（如 whoami、ping）。</p>
-<p>产生RCE漏洞的根本原因，通常是应用程序对用户输入没有进行充分的过滤或验证，就直接将其传入了危险的执行函数中。一旦被利用，攻击者可以窃取敏感数据、植入后门，甚至将受控机器作为跳板攻击内网。想起了SQL注入！</p>
-<p>RCE 和 SQL 注入确实都是是不可信的用户输入，没有被正确限制在“数据”的边界内，结果被解释成了“代码&#x2F;命令&#x2F;查询语法”。</p>
-<p>但是RCE其实不算漏洞，它是漏洞导致的危害性的结果。</p>
-<h1 id="序列化和反序列化"><a href="#序列化和反序列化" class="headerlink" title="序列化和反序列化"></a>序列化和反序列化</h1><p>序列化：把内存里的对象（比如有名字、年龄的用户），变成一串字符串来存储。相当于把高达拆成零件运输，顺便给人送了个说明书<br>反序列化：把这串字符串，重新变回对象。程序拿到数据后，得还原成对象才能继续用。就是照着说明书拼出乐高。</p>
-<p>这个说明书呢就是一个格式化描述</p>
-<p>O:4:”User”:2:{s:4:”name”;s:5:”admin”;s:3:”age”;i:18;}</p>
-<h2 id="那为什么所有语言都要序列化？"><a href="#那为什么所有语言都要序列化？" class="headerlink" title="那为什么所有语言都要序列化？"></a>那为什么所有语言都要序列化？</h2><p>比如Python 程序里有一个爬虫对象，里面装了requests.Session、Cookie这一堆。想把它存下来明天接着用的话也不能直接把这堆内存写入文件，因为它依赖当前运行的进程（意思差不多是说正在发生的这个时间点的现场，活在当下）<br>所以，任何语言想“持久化”或者“跨进程通信”，都必须把对象变成字节&#x2F;字符串。这个过程就叫序列化。</p>
-<p>JSON：最通用的序列化格式（跨语言）。<br>PHP serialize：PHP 专用，长得像天书。<br>Python pickle：Python 专用，二进制。<br>protobuf：Google 的高效二进制序列化格式。</p>
-<h2 id="小联想"><a href="#小联想" class="headerlink" title="小联想"></a>小联想</h2><p>PHP的序列化默认输出的是人类可读的文本字符串，和C语言存储二进制有点像</p>
-<h1 id="session和cookie的区别"><a href="#session和cookie的区别" class="headerlink" title="session和cookie的区别"></a>session和cookie的区别</h1><p>看起来都比较像身份牌，之前没有做什么区分，简单区分一波<br>session数据存在服务器上，在第一次登录时服务器创建一个session然后把它塞到cookie里面发给浏览器<br>cookie数据存在自己电脑上，是服务器发给浏览器的一小段文本，每次请求时自动带上</p>
-<p>session比cookie安全多了，因为它的话用户看不到，不能随便改，但是cookie就可以</p>
-<h2 id="session配合php反序化漏洞"><a href="#session配合php反序化漏洞" class="headerlink" title="session配合php反序化漏洞"></a>session配合php反序化漏洞</h2><p>正好刚学了反序化&gt;v&lt;</p>
-<p>但是这个还不是很懂，先记在这里，就了解了一下，涉及到的知识有点广了，下周！下周！</p>
+                <h3 id="心情"><a href="#心情" class="headerlink" title="心情"></a>心情</h3><p>激动！搭建好的第一个独立博客，没有我想象的难</p>
+<h2 id="寄语"><a href="#寄语" class="headerlink" title="寄语"></a>寄语</h2><p><strong>不要害怕开始！勇于尝试 不要轻易放弃 相信自己</strong></p>
+<p>很多时候事情并不像你想象的那么难，跨过心中的那道坎，勇敢的踏上未知的路吧</p>
+<p>希望自己在今后能不断学习，保持这份纯粹与炽热</p>
+<p>坚持</p>
+<blockquote>
+<p>热爱可抵岁月漫长</p>
+</blockquote>
 
                 
               </div>
@@ -435,7 +427,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%AC%94%E8%AE%B0/" class="print-no-link">#笔记</a>
+        <a href="/tags/%E9%9A%8F%E7%AC%94/" class="print-no-link">#随笔</a>
       
     </div>
   
@@ -447,8 +439,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>周记</div>
-      <div>https://circle-q.github.io/2026/11/22/bbb/</div>
+      <div>初见</div>
+      <div>https://circle-q.github.io/2026/10/24/sui1/</div>
     </div>
     <div class="license-meta">
       
@@ -460,7 +452,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年11月22日</div>
+          <div>2026年10月24日</div>
         </div>
       
       
@@ -492,15 +484,15 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2026/10/26/web-01/" title="前端理解">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">前端理解</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2026/11/16/aaa/" title="我才是当代古人">
-                        <span class="hidden-mobile">我才是当代古人</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
