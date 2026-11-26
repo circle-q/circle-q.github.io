@@ -27,7 +27,7 @@
 <meta property="og:description" content="一些php基础的知识">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-11-26T11:47:48.000Z">
-<meta property="article:modified_time" content="2026-11-26T13:09:37.587Z">
+<meta property="article:modified_time" content="2026-11-26T15:48:44.424Z">
 <meta property="article:author" content="Q.q">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary_large_image">
@@ -409,10 +409,9 @@
                 
                 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>PHP 是运行在服务器上的语言。你写的echo “abc”;并不是显示在编辑器里，而是把abc写进最终发给浏览器的 HTML 里。所以浏览器打开页面后看到abc，用命令行运行php test.php时也会看到abc。这三个东西本质上都是**“把内容送出去”或“把内容看清楚”**的工具，只是用途不一样。</p>
 <p>PHP 代码必须写在 <code>&lt;?php ... ?&gt;</code> 里面：</p>
-<h1 id="代码标记"><a href="#代码标记" class="headerlink" title="代码标记"></a>代码标记</h1><p>PHP 一般是嵌套在 HTML 页面里的，这么多东西，服务器怎么知道哪部分是 HTML，哪部分是要执行的 PHP 呢？就需要用标记来界一下定边界。(就和在 HTML 里用 <p> 和 </p> 来标记一段段落一样)</p>
-<h2 id="标准标记"><a href="#标准标记" class="headerlink" title="标准标记"></a>标准标记</h2><?php ... ?>
-
-<h2 id="短标记"><a href="#短标记" class="headerlink" title="短标记"></a>短标记</h2><? ... ?><p> 或 <?= ... ?></p>
+<h1 id="代码标记"><a href="#代码标记" class="headerlink" title="代码标记"></a>代码标记</h1><p>PHP 一般是嵌套在 HTML 页面里的，这么多东西，服务器怎么知道哪部分是 HTML，哪部分是要执行的 PHP 呢？就需要用标记来界一下定边界。(就和在 HTML 里用 <code>&lt;p&gt;</code> 和 <code>&lt;/p&gt; </code>来标记一段段落一样)</p>
+<h2 id="标准标记"><a href="#标准标记" class="headerlink" title="标准标记"></a>标准标记</h2><p><code>&lt;?php ... ?&gt;</code></p>
+<h2 id="短标记"><a href="#短标记" class="headerlink" title="短标记"></a>短标记</h2><p><code>&lt;? ... ?&gt; 或 &lt;?= ... ?&gt;</code></p>
 <h2 id="脚本标记"><a href="#脚本标记" class="headerlink" title="脚本标记"></a>脚本标记</h2><script language="php">php代码</script>
 <p>但是这个貌似比较老，现在新版本的都用不了了，一般还是不写了吧</p>
 <h1 id="php语句分隔符"><a href="#php语句分隔符" class="headerlink" title="php语句分隔符"></a>php语句分隔符</h1><p>它就相当于一句话的句号，c语言里面的分号(已学会类比。再次感叹王前辈简直是融会贯通温故知新派好老师，如果能复制粘贴此等良师……🤤)</p>
